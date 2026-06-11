@@ -30,10 +30,22 @@ La propuesta cuenta con un prototipo funcional interactivo e integrado. Se adjun
 * **Vercel & GitHub**: Herramientas utilizadas para el control de versiones y el despliegue de la aplicación web en producción.
 
 # 8. Conceptos vistos en clase que fueron aplicados
-* **Frontend**: Diseño de pantallas responsivas, contenedores de chat adaptativos y manejo de estados visuales para la interacción del usuario.
-* **Backend**: Arquitectura de servidor con Express para gestionar peticiones HTTP POST de manera segura y proteger las credenciales privadas.
-* **Variables de Entorno y Seguridad**: Uso de archivos `.env` para la inyección en tiempo de ejecución de claves de API, separando la configuración del código fuente.
-* **Gestión de Datos**: Modelado de un catálogo estructurado de hardware (dividido por categorías de componentes con sus respectivos precios en USD) para simular la persistencia y control de inventario.
+
+* **Frontend (La interfaz del usuario)**
+  * **Vite + React + TypeScript**: Armé una interfaz rápida, moderna y tipada para evitar errores en el código.
+  * **Componentes modulares**: Separé la aplicación en bloques limpios (por ejemplo, el componente `<Chat />` maneja de forma aislada toda la ventana de los mensajes).
+  * **Diseño y Estilos**: Usé archivos CSS (`index.css`) adaptados con una estética gamer, oscura y fluida para la experiencia del usuario.
+
+* **Backend (El servidor)**
+  * **Node.js + Express (`server.ts`)**: Hice un servidor backend propio para manejar la lógica de la aplicación fuera del alcance del navegador.
+  * **Servidor Mixto (Monorepo)**: Armé una estructura donde el backend y el frontend conviven de forma integrada, permitiendo que la app se ejecute localmente con un único ecosistema de dependencias (`package.json`).
+
+* **Integración con Inteligencia Artificial**
+  * **Google Gemini API**: Conecté la aplicación con los modelos avanzados de IA de Google Studio.
+  * **Seguridad de Claves (Variables de Entorno)**: Di uso a una API Key (`GEMINI_API_KEY`) protegida mediante variables de entorno en archivos `.env` para que la clave secreta de Google nunca quede expuesta públicamente en el código.
+
+* **Despliegue (Raciocinio sobre la publicación)**
+  * **Configuración de Servidores Cloud (`vercel.json`)**: Creé y estructuré un archivo de rutas específico para guiar a plataformas en la nube sobre cómo compilar el frontend y rutear las peticiones hacia el backend de Node.js.
 
 # 9. Limitaciones actuales
 * Los datos de stock y precios están acoplados al prompt del sistema en el servidor, lo que significa que el comerciante debe editar el código fuente si cambian los valores.
